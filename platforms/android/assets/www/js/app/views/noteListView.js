@@ -21,6 +21,12 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
  * OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ *
+ * Cheyenne von Kostka editing code 3.16.17
+ *
+ *
+ *
  */
 /*jshint
          asi:true,
@@ -217,7 +223,8 @@ define( [ "yasmf", "app/models/noteStorageSingleton", "text!html/noteListView.ht
               "TRASH": _y.T( "TRASH" ),
               "NAME": notes[ note ].name,
               "REPRESENTATION": notes[ note ].representation,
-              "MODIFIED": _y.D( notes[ note ].modifiedDate, "D" ),
+              "MODIFIED": _y.D( notes[ note ].modifiedDate, "D" ), 
+			  "STATUS": notes[note]._status,  // i added this, i have no clue if this is what it's suppose to be at all!
               "INFO": "" + _y.N( notes[ note ].formattedUnitValue )
             } );
             // attach any event handlers

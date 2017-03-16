@@ -21,6 +21,11 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
  * OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * Cheyenne von Kostka editing 3.16.17
+ * Status functionality works
+ *
+ *
  */
 /*jshint
          asi:true,
@@ -57,6 +62,8 @@ define( [ "yasmf" ], function( _y ) {
     self.registerNotification( "mediaContentsChanged" );
     self.registerNotification( "unitValueChanged" );
     self.registerNotification( "unitLabelsChanged" );
+	//Okay this is where the status thingy was added!! Cheyenne did this!!!!!!!!!!!!!
+	self.registerNotification("stausChanged");
     /**
      * The note's unique identifier. getUID is the getter, and
      * setUID is the setter. Two properties can be used to
@@ -123,6 +130,29 @@ define( [ "yasmf" ], function( _y ) {
       set: self.setName,
       configurable: true
     } );
+	  /**!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+     * Cheyenne messing up the code on 3.10.17, just copied name, hope it works
+     * 
+	 * Cheyenne going to attempt messing up the code again on 3.15.17, here we go!
+	 *
+	 * Cheyenne got the status working I think 3.16.17
+	 *
+     */
+    self._status = "New";
+    self.getStatus = function() {
+	
+      return self._status;
+    };
+    self.setStatus = function( theStatus ) {
+      self._status = theStatus;
+     
+      self.notify( "statusChanged" );
+    };
+    Object.defineProperty( self, "Status", {
+      get: self.getStatus,
+      set: self.setStatus,
+      configurable: true
+    } ); 
     /**
      * Instead of the line count, we'll use a generic "unit". For the BaseNote, this
      * is still a line count, but other note types may use it differently.
@@ -225,6 +255,7 @@ define( [ "yasmf" ], function( _y ) {
         "createdDate": self.createdDate,
         "modifiedDate": self.modifiedDate,
         "name": self.name,
+		"Status": self.Status,  // added this for status!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         "textContents": self.textContents,
         "mediaContents": self.mediaContents,
         "unitValue": self.unitValue,
@@ -247,6 +278,7 @@ define( [ "yasmf" ], function( _y ) {
         self.uid = aNote.uid;
         self._createdDate = new Date( aNote.createdDate );
         self.name = aNote.name;
+		self.Status = aNote.Status; // Cheyenne added this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         self.textContents = aNote.textContents;
         self.mediaContents = aNote.mediaContents;
         self.unitValue = aNote.unitValue; // so we don't have to recalc it

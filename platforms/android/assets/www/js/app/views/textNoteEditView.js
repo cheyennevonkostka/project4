@@ -21,6 +21,11 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
  * OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * Cheyenne von Kostka editing stuff 3.16.17
+ *
+ *
+ *
  */
 /*jshint
          asi:true,
@@ -67,6 +72,8 @@ define( [ "yasmf", "app/models/noteStorageSingleton",
     self.saveNote = function() {
       self._note.name = self._nameEditor.innerText;
       self._note.textContents = self._contentsEditor.value;
+//	  self._note.setStatus = ((document.getElementById("status")).options[(document.getElementById("status")).selectedIndex].value);
+	  // Cheyenne added this, don't have it working yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       noteStorageSingleton.saveNote( self._note );
     };
     /**
