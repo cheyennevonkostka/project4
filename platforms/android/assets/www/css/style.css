@@ -309,9 +309,6 @@ css and changed it a little bit */
   border-radius: 0;
 }
 
-.noteEditView .status{ /*Maybe baby*/
-	padding-right: 10px;
-}
 
 .android .noteEditView .ui-text-box {
   font-family: "Roboto", "DroidSans", Helvetica, Arial, Sans-Serif;
@@ -423,9 +420,7 @@ css and changed it a little bit */
   mask-position-y: 100%;
   background-color: white;
 }
-.ImageNoteEditView .status{ /*Maybe baby*/
-	padding-right:10px;
-}
+
 /* since masked icons can't have more than one color (+transparent),
    we duplicate the icon with a different color so we can outline it.
    The +1px enables the outline. That said, on Android < 4.4, the
