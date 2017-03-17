@@ -19,6 +19,13 @@
  * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT
  * OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
+ *
+ * Cheyenne von Kostka adding css styling for the STATUS! 3.17.17
+ *
+ *
+ *
+ *
+ *
  */
 
 /* General styles */
@@ -217,6 +224,27 @@ body.android {
 }
 /* position and style the note information */
 
+/* possible css for status thingy */ 
+/*I edited this. Cheyenne did it. I literally copied the other 
+css and changed it a little bit */
+
+.noteListView .ui-list-item .note-status {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 250;
+  color: rgba(87, 52, 32, 0.5);
+  float: right;
+  padding-left: 2px;
+  padding-right: 10px;
+}
+
+
+
+
+
+
+
+
 .noteListView .ui-list-item .note-info {
   font-size: 16px;
   line-height: 20px;
@@ -280,6 +308,11 @@ body.android {
   height: 100%;
   border-radius: 0;
 }
+
+.noteEditView .status{ /*Maybe baby*/
+	padding-right: 10px;
+}
+
 .android .noteEditView .ui-text-box {
   font-family: "Roboto", "DroidSans", Helvetica, Arial, Sans-Serif;
   color: #484848;
@@ -389,6 +422,9 @@ body.android {
   -ms-mask-position-y: 100%;
   mask-position-y: 100%;
   background-color: white;
+}
+.ImageNoteEditView .status{ /*Maybe baby*/
+	padding-right:10px;
 }
 /* since masked icons can't have more than one color (+transparent),
    we duplicate the icon with a different color so we can outline it.

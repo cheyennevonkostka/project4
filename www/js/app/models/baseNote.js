@@ -255,7 +255,7 @@ define( [ "yasmf" ], function( _y ) {
         "createdDate": self.createdDate,
         "modifiedDate": self.modifiedDate,
         "name": self.name,
-		"Status": self.Status,  // added this for status!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		"Status": self._status,  // added this for status!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         "textContents": self.textContents,
         "mediaContents": self.mediaContents,
         "unitValue": self.unitValue,
@@ -278,7 +278,7 @@ define( [ "yasmf" ], function( _y ) {
         self.uid = aNote.uid;
         self._createdDate = new Date( aNote.createdDate );
         self.name = aNote.name;
-		self.Status = aNote.Status; // Cheyenne added this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		self._status = aNote.Status; // Cheyenne added this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         self.textContents = aNote.textContents;
         self.mediaContents = aNote.mediaContents;
         self.unitValue = aNote.unitValue; // so we don't have to recalc it

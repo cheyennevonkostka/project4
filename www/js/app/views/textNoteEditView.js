@@ -72,8 +72,12 @@ define( [ "yasmf", "app/models/noteStorageSingleton",
     self.saveNote = function() {
       self._note.name = self._nameEditor.innerText;
       self._note.textContents = self._contentsEditor.value;
-//	  self._note.setStatus = ((document.getElementById("status")).options[(document.getElementById("status")).selectedIndex].value);
-	  // Cheyenne added this, don't have it working yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	 var poo  = ((document.getElementById("status")).options[(document.getElementById("status")).selectedIndex].value).toString();
+	if (poo == "Follow")	
+		{self._note._status = "Follow Up";} // Changed so that the follow up shows up as I would like it to
+	else if ( poo != "null" )
+	 {self._note.setStatus(poo);}
+					// Cheyenne added this, WORKING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
       noteStorageSingleton.saveNote( self._note );
     };
     /**
